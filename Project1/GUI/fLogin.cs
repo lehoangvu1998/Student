@@ -45,6 +45,8 @@ namespace Project1
                         }
                         if (quyen == 1)
                         {
+                            fPhongban.name = name;
+                            fPhongban.address = address;
                             this.Hide();
                             new fPhongban().ShowDialog();
                             this.Close();

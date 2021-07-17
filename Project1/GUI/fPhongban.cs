@@ -15,6 +15,7 @@ namespace Project1.GUI
 {
     public partial class fPhongban : DevExpress.XtraEditors.XtraForm
     {
+        public static string name, address;
         bll_phongban bll = new bll_phongban();
         public fPhongban()
         {
@@ -22,6 +23,9 @@ namespace Project1.GUI
             loadphongban();
             txbmaphongban.ReadOnly = true;
             txbphongban.ReadOnly = true;
+
+            txbmaphongban.Text = name;
+            txbphongban.Text = address;
         }
 
         void taomaphongban()
