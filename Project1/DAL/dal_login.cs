@@ -14,7 +14,7 @@ namespace Project1.DAL
         public List<dto_login> GetData(int maso)
         {
             List<dto_login> arr = new List<dto_login>();
-            string query = "select HOTEN, ROLE, DIACHI from USERS where MAUSERS = " + maso;
+            string query = "select MAUSERS, HOTEN, ROLE, DIACHI from USERS where MAUSERS = " + maso;
             try
             {
                 SqlCommand cmd = new SqlCommand(query, conn);

@@ -20,10 +20,11 @@ namespace Project1
 
         private void btnlogn_Click(object sender, EventArgs e)
         {
-            dto.Maso = int.Parse(txttaikhoan.Text);
-            dto.Pass = txbpass.Text;
-            if (!string.IsNullOrWhiteSpace(txttaikhoan.Text) && !string.IsNullOrWhiteSpace(txbpass.Text))
+
+            if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
+                dto.Maso = int.Parse(txtUsername.Text);
+                dto.Pass = txtPassword.Text;
                 if (bll.Login(dto.Maso, dto.Pass))
                 {
                     arr = bll.GetData(dto.Maso);
@@ -56,6 +57,10 @@ namespace Project1
                 }
                 else
                     XtraMessageBox.Show("Đăng nhập thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                XtraMessageBox.Show("Tài khoản hoặc mật khẩu không được bỏ trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
