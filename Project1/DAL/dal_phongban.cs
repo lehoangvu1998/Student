@@ -42,7 +42,7 @@ namespace Project1.DAL
             try
             {
                 conn.Open();
-                string sql = string.Format("update PHONGBAN set TENPHONGBAN ='{1}' where MAPHONGBAN={0}", pb.Phongban, pb.Maphongban);
+                string sql = string.Format("update PHONGBAN set TENPHONGBAN ='{0}' where MAPHONGBAN={1}", pb.Phongban, pb.Maphongban);
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 if (cmd.ExecuteNonQuery() > 0)
                 {

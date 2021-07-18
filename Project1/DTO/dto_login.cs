@@ -8,15 +8,15 @@
 
         public string Name { get; set; }
         public string Address { get; set; }
-        //public dto_login()
-        //{
-        //}
+        public dto_login()
+        {
+        }
 
-        //public dto_login(int maso, int role, string pass)
-        //{
-        //    this.Maso = maso;
-        //    this.Pass = pass;
-        //    this.Role = role;
-        //}
+        public dto_login(int maso, int role, string pass)
+        {
+            this.Maso = maso;
+            this.Pass = pass;
+            this.Role = role;
+        }
     }
 }

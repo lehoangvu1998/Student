@@ -73,10 +73,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\bll_khoa.cs" />
     <Compile Include="BLL\bll_login.cs" />
     <Compile Include="BLL\bll_phongban.cs" />
+    <Compile Include="DAL\dal_khoa.cs" />
     <Compile Include="DAL\dal_login.cs" />
     <Compile Include="DAL\dal_phongban.cs" />
+    <Compile Include="DTO\dto_khoa.cs" />
     <Compile Include="DTO\dto_phongban.cs" />
     <Compile Include="DAL\DBConnect.cs" />
     <Compile Include="DTO\dto_login.cs" />
@@ -85,6 +88,12 @@
     </Compile>
     <Compile Include="GUI\fhome.Designer.cs">
       <DependentUpon>fhome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fKhoa.Designer.cs">
+      <DependentUpon>fKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\fLogin.cs">
       <SubType>Form</SubType>
@@ -100,8 +109,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLSINHVIENDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLSINHVIENDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GUI\fhome.resx">
       <DependentUpon>fhome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fKhoa.resx">
+      <DependentUpon>fKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
@@ -130,6 +147,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLSINHVIENDataSet.xsc">
+      <DependentUpon>QLSINHVIENDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLSINHVIENDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLSINHVIENDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLSINHVIENDataSet.xss">
+      <DependentUpon>QLSINHVIENDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

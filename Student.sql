@@ -155,4 +155,13 @@ WHERE (kh.MAKHOA = us.MAKHOA) AND
 				(l.MALOP = us.MALOP) AND (tn.MAUSERS = us.MAUSERS)
 
 SELECT * FROM USERS
-select* from THANNHAN
+select* from PHONGBAN
+
+select* from KHOA
+insert into KHOA values (123, N'cntt', 564, 12323)
+
+select pb.TENPHONGBAN
+from PHONGBAN pb, KHOA kh
+where kh.MAPHONGBAN = pb.MAPHONGBAN
+
+select * from PHONGBAN

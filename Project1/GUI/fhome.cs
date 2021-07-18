@@ -6,12 +6,27 @@ namespace Project1.GUI
 {
     public partial class fhome : DevExpress.XtraEditors.XtraForm
     {
+       
         public static string name, address;
+        public static int quyen;
         public fhome()
         {
             InitializeComponent();
-            loadusers();
             timer2.Start();
+
+            if (quyen == 0)
+            {
+                
+            }
+            if (quyen == 1)
+            {
+                phongban.Visible = false;
+            }
+            if (quyen == 2)
+            {
+            
+            }
+            labelControl1.Text = " Xin chào ," + name;
         }
 
         private int imgae = 1;
@@ -28,11 +43,6 @@ namespace Project1.GUI
             imgae++;
         }
 
-        private void loadusers()
-        {
-            
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Loadnextimg();
@@ -40,9 +50,7 @@ namespace Project1.GUI
 
         private void phongban_Click(object sender, EventArgs e)
         {
-            fPhongban f = new fPhongban();
-            f.Show();
-            this.Dispose();
+            new fPhongban().ShowDialog();
         }
 
         private void fhome_FormClosing(object sender, FormClosingEventArgs e)

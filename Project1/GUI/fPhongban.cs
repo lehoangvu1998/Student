@@ -1,14 +1,6 @@
-﻿using DevExpress.XtraEditors;
-using Project1.BLL;
+﻿using Project1.BLL;
 using Project1.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project1.GUI
@@ -17,6 +9,7 @@ namespace Project1.GUI
     {
         public static string name, address;
         bll_phongban bll = new bll_phongban();
+        dto_phongban dto = new dto_phongban();
         public fPhongban()
         {
             InitializeComponent();
@@ -63,9 +56,11 @@ namespace Project1.GUI
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            dto.Maphongban = int.Parse(txbmaphongban.Text);
+            dto.Phongban = txbphongban.Text;
             if (txbmaphongban.Text != "" && txbphongban.Text != "")
             {
-                dto_phongban dto = new dto_phongban(txbmaphongban.Text, txbphongban.Text);
+                new dto_phongban(dto.Maphongban, dto.Phongban);
                 
                 if (bll.themphongban(dto))
                 {
@@ -96,12 +91,14 @@ namespace Project1.GUI
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
+            dto.Maphongban = int.Parse(txbmaphongban.Text);
+            dto.Phongban = txbphongban.Text;
             if (txbphongban.Text != "")
             {
-                dto_phongban pb = new dto_phongban(txbphongban.Text, txbmaphongban.Text);
+                new dto_phongban(dto.Maphongban, dto.Phongban);
                 if (MessageBox.Show(" Bạn có muốn thay đổi tên phòng ban !!!" , "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                   if (bll.suaphongban(pb))
+                   if (bll.suaphongban(dto))
                     {
                         MessageBox.Show("Cập nhật thành công ");
                         loadphongban();
@@ -126,10 +123,10 @@ namespace Project1.GUI
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            dto_phongban pb = new dto_phongban(txbmaphongban.Text, txbphongban.Text);
+                dto.Maphongban = int.Parse(txbmaphongban.Text);
             if (MessageBox.Show(" Bạn có muốn xóa phòng ban !!!", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (bll.delete(pb))
+                if (bll.delete(dto))
                 {
                     MessageBox.Show("Xóa thành công ");
                     loadphongban();

@@ -8,20 +8,20 @@ namespace Project1.DTO
 {
    public class dto_phongban
     {
-        private string maphongban;
+        private int maphongban;
         private String phongban;
 
         public dto_phongban()
         {
 
         }
-        public dto_phongban(string maphongban, string phongban)
+        public dto_phongban(int maphongban, string phongban)
         {
             this.maphongban = maphongban;
             this.phongban = phongban;
         }
 
-        public string Maphongban { get => maphongban; set => maphongban = value; }
+        public int Maphongban { get => maphongban; set => maphongban = value; }
         public string Phongban { get => phongban; set => phongban = value; }
     }
 }

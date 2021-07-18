@@ -32,23 +32,21 @@ namespace Project1
                     {
                         dto = arr[i];
                         string name = dto.Name;
-                        string address = dto.Address;
                         int quyen = dto.Role;
-                        //double diem = dto.Diem;
                         if (quyen == 0)
                         {
-                            fhome.name = name;
-                            fhome.address = address;
                             this.Hide();
+                            fhome.name = name;
+                            fhome.quyen = quyen;
                             new fhome().ShowDialog();
                             this.Close();
                         }
                         if (quyen == 1)
                         {
-                            fPhongban.name = name;
-                            fPhongban.address = address;
                             this.Hide();
-                            new fPhongban().ShowDialog();
+                            fhome.name = name;
+                            fhome.quyen = quyen;
+                            new fhome().ShowDialog();
                             this.Close();
                         }
                         if (quyen == 2)
